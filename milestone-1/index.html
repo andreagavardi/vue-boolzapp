@@ -81,7 +81,10 @@
                 <!-- Messages section -->
                 <div class="messages">
                     <div class="message" v-for="message in currentMessages">
-                        <span :class="message.status">{{message.text}}</span>
+                        <div :class="message.status">{{message.text}}
+                            <span class="detail data">{{message.date}}</span>
+
+                        </div>
                     </div>
                 </div>
                 <!-- /Messages section -->
