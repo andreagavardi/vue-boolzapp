@@ -21,6 +21,7 @@
             <!-- Left Sidebar -->
             <aside>
                 <div class="aside_top">
+                    <!-- User section -->
                     <div class="user_menu">
                         <div class="user">
                             <img src="./assets/img/avatar_io.jpg" alt="">
@@ -33,6 +34,8 @@
     
                         </div>
                     </div>
+
+                    <!-- notification Off section -->
                     <div class="silent">
                         <i class="fas fa-bell-slash fa-lg fa-fw"></i>
                         <div class="notifications">
@@ -42,6 +45,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Contacts lists -->
                 <div class="contacts_bar">
                     <div class="search_bar">
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
@@ -58,16 +63,31 @@
             <!-- /Left Sidebar -->
 
             <!-- Main Section -->
-            <main>
+            <main id="site_main">
                 <!--Current contact Section -->
-                <navbar class="current_contact"></navbar>
+                <section class="current_contact">
+                    <div class="user">
+                        <img src="./assets/img/avatar_io.jpg" alt="">
+                        <span class="user_name">Nome Utente</span>
+                    </div>
+                    <div class="icons">
+                       <i class="fas fa-search fa-lg fa-fw"></i>
+                      <i class="fas fa-paperclip fa-lg fa-fw"></i>
+                        <i class="fas fa-ellipsis-v fa-lg fa-fw"></i>
+                    
+                    </div>
+                </section>
 
                 <!-- Messages section -->
                 <div class="messages"></div>
                 <!-- /Messages section -->
 
                 <!-- Text section -->
-                <div class="text_bar"></div>
+                <div class="text_bar">
+                    <i class="fas fa-smile fa-lg fa-fw"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                  <i class="fas fa-microphone fa-lg fa-fw"></i>
+                </div>
                 <!--/Text section -->
             </main>
             <!--/Messages Section -->
