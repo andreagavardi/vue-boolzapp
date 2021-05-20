@@ -17,7 +17,62 @@
 
     <div id="app">
 
-        
+        <div class="main_container">
+            <!-- Left Sidebar -->
+            <aside>
+                <div class="aside_top">
+                    <div class="user_menu">
+                        <div class="user">
+                            <img src="./assets/img/avatar_io.jpg" alt="">
+                            <span class="user_name" >Nome Utente</span>
+                        </div>
+                        <div class="icons">
+                            <i class="fas fa-circle-notch fa-lg fa-fw"></i>
+                           <i class="fas fa-comment-alt fa-lg fa-fw"></i>
+                            <i class="fas fa-ellipsis-v fa-lg fa-fw"></i>
+    
+                        </div>
+                    </div>
+                    <div class="silent">
+                        <i class="fas fa-bell-slash fa-lg fa-fw"></i>
+                        <div class="notifications">
+                            <span>Ricevi notifiche di nuovi messaggi</span>
+                            <br>
+                            <span>Attiva notifiche desktop</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts_bar">
+                    <div class="search_bar">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <i class="fas fa-search fa-lg fa-fw"></i>
+                    </div>
+                    <div class="contacts" v-for="contact in contacts">
+                        <div class="contact">
+                            <img :src="url + contact.avatar +'.jpg'"  alt="">
+                            <span >{{contact.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- /Left Sidebar -->
+
+            <!-- Main Section -->
+            <main>
+                <!--Current contact Section -->
+                <navbar class="current_contact"></navbar>
+
+                <!-- Messages section -->
+                <div class="messages"></div>
+                <!-- /Messages section -->
+
+                <!-- Text section -->
+                <div class="text_bar"></div>
+                <!--/Text section -->
+            </main>
+            <!--/Messages Section -->
+            
+        </div>
     </div>
 
 

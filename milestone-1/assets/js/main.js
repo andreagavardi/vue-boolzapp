@@ -15,16 +15,8 @@ const app = new Vue({
     el:"#app",
 
     data:{
-
-    },
-
-    methods:{
-        
-    }
-})
-
-/* struttura dati contatti */
-contacts: [
+        url:"./assets/img/avatar",
+        contacts: [
 	{
 		name: 'Michele',
 		avatar: '_1',
@@ -110,3 +102,12 @@ contacts: [
 		],
 	},
 ]
+
+    },
+
+    methods:{
+
+    }
+})
+
+/* struttura dati contatti */

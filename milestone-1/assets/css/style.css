@@ -1,5 +1,132 @@
+/**********
+Common
+***********/
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: green;
+}
+/***************
+Main Container
+****************/
+.main_container {
+  height: 90vh;
+  width: 80%;
+  margin: 50px auto;
+  display: flex;
+}
+
+aside {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  background-color: chocolate;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.current_contact {
+  background-color: cyan;
+  height: 20%;
+}
+.text_bar {
+  background-color: cornflowerblue;
+  height: 20%;
+}
+
+/************
+Left-bar
+************/
+.user_menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eaeaea;
+  min-height: 50%;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+.user > img,
+.contact img {
+  width: 80px;
+  border-radius: 50%;
+}
+.user_name,
+.contact span {
+  font-size: 1.5rem;
+}
+
+.icons i {
+  margin: 2px;
+  font-size: 1.8rem;
+  color: grey;
+}
+
+.silent {
+  background-color: #8edafc;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.15rem;
+}
+.silent i {
+  color: #8edafc;
+  font-size: 2.5rem;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px 0;
+}
+.silent span:last-child {
+  text-decoration: underline;
+  color: grey;
+  font-size: 1rem;
+}
+
+.contacts_bar {
+  background-color: #fafafa;
+  overflow-y: scroll;
+  flex-grow: 2;
+}
+.search_bar {
+  position: relative;
+}
+.search_bar i {
+  position: absolute;
+  left: 15px;
+  top: 40%;
+  color: grey;
+}
+.contacts_bar input {
+  padding: 10px;
+  width: calc(100% - 1rem);
+  text-align: center;
+  margin: 0.5rem;
+}
+
+.contact {
+  display: flex;
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 2px;
+}
+.contact:hover {
+  background-color: #fafafa;
+}
+.contact span {
+  margin-left: 1rem;
 }
