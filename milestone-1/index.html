@@ -52,8 +52,8 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                         <i class="fas fa-search fa-lg fa-fw"></i>
                     </div>
-                    <div class="contacts" v-for="contact in contacts">
-                        <div class="contact">
+                    <div class="contacts" v-for="(contact,index) in contacts">
+                        <div class="contact" @click="selezionaContatto(contact,index)">
                             <img :src="url + contact.avatar +'.jpg'"  alt="">
                             <span >{{contact.name}}</span>
                         </div>
@@ -67,8 +67,8 @@
                 <!--Current contact Section -->
                 <section class="current_contact">
                     <div class="user">
-                        <img src="./assets/img/avatar_io.jpg" alt="">
-                        <span class="user_name">Nome Utente</span>
+                        <img :src="currentImage"alt="">
+                        <span class="user_name">{{contattoCorrente.name}}</span>
                     </div>
                     <div class="icons">
                        <i class="fas fa-search fa-lg fa-fw"></i>
@@ -79,7 +79,11 @@
                 </section>
 
                 <!-- Messages section -->
-                <div class="messages"></div>
+                <div class="messages">
+                    <div class="message" v-for="message in currentMessages">
+                        <span :class="message.status">{{message.text}}</span>
+                    </div>
+                </div>
                 <!-- /Messages section -->
 
                 <!-- Text section -->

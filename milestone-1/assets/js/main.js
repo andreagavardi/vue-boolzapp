@@ -16,6 +16,9 @@ const app = new Vue({
 
     data:{
         url:"./assets/img/avatar",
+        contattoCorrente:"",
+        currentImage: "",
+        currentMessages:[],
         contacts: [
 	{
 		name: 'Michele',
@@ -106,7 +109,12 @@ const app = new Vue({
     },
 
     methods:{
-
+        selezionaContatto(contact,index){
+            this.contattoCorrente = contact;
+            this.currentImage = this.url + contact.avatar +".jpg";
+            console.log(contact.messages);
+            this.currentMessages=contact.messages;
+        }
     }
 })
 

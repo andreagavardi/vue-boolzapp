@@ -34,6 +34,22 @@ input {
   border-style: none;
   border-radius: 5px;
 }
+.sent,
+.received {
+  font-size: 1.25rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+}
+.sent {
+  background-color: green;
+  align-self: flex-end;
+  margin-right: 2rem;
+}
+.received {
+  background-color: white;
+  align-self: flex-start;
+  margin-left: 2rem;
+}
 
 /************
 Left-bar
@@ -156,6 +172,11 @@ Site Main
   height: 100%;
 }
 
+.message {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 0;
+}
 /* text section */
 .text_bar {
   display: flex;
