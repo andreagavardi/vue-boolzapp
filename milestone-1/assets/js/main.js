@@ -16,8 +16,10 @@ const app = new Vue({
 
     data:{
         url:"./assets/img/avatar",
-        contattoCorrente:"",
-        currentImage:"",
+        contattoCorrente:{
+			name: 'Fabio',
+			avatar: '_2'},
+        currentImage:"./assets/img/avatar_2.jpg",
         currentMessages:[],
         newMessage:"",
         messageSent:{
@@ -116,18 +118,27 @@ const app = new Vue({
     },
 
     methods:{
-        selezionaContatto(contact,index){
-            this.contattoCorrente = contact;
+		
+		selezionaContatto(contact){
+			this.contattoCorrente = contact;
+			console.log(this.contattoCorrente);
             this.currentImage = this.url + contact.avatar +".jpg";
             this.currentMessages=contact.messages;
         },
+		rispostaAuto(msg) {
+			  setTimeout(function(){
+			  msg.push({text:"sei fantastico",status:"received", /* date:"12/12" */})
+
+			  }, 1000)
+		},
         inviaMessaggio(){
             this.currentMessages.push({text:this.newMessage,status:"sent", /* date:"12/12" */});
-            console.log(this.newMessage);
-            console.log(this.currentMessages);
             this.newMessage="";
+			this.rispostaAuto(this.currentMessages);
+
         }
-    }
+    },
+	
 })
 
 /* struttura dati contatti */
