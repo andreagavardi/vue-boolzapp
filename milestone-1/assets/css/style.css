@@ -11,7 +11,7 @@ body {
 }
 .main_container {
   height: 90vh;
-  width: 85%;
+  width: 90%;
   margin: 50px auto;
   display: flex;
 }
@@ -61,7 +61,7 @@ Left-bar
   justify-content: space-between;
   align-items: center;
   background-color: #eaeaea;
-  min-height: 50%;
+  /*  min-height: 50%; */
 }
 
 .user {
@@ -161,7 +161,7 @@ Site Main
   align-items: center;
   justify-content: space-between;
   padding-right: 15px;
-  height: 112px;
+  max-height: 200px;
 }
 .current_contact .user .user_name {
   margin-left: 1.5rem;
