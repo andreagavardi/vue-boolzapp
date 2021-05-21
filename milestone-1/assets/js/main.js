@@ -17,8 +17,15 @@ const app = new Vue({
     data:{
         url:"./assets/img/avatar",
         contattoCorrente:"",
-        currentImage: "",
+        currentImage:"",
         currentMessages:[],
+        newMessage:"",
+        messageSent:{
+                date: '10/01/2020 15:30:55',
+				text: "",
+				status: 'sent'
+
+        },
         contacts: [
 	{
 		name: 'Michele',
@@ -112,8 +119,13 @@ const app = new Vue({
         selezionaContatto(contact,index){
             this.contattoCorrente = contact;
             this.currentImage = this.url + contact.avatar +".jpg";
-            console.log(contact.messages);
             this.currentMessages=contact.messages;
+        },
+        inviaMessaggio(){
+            this.currentMessages.push({text:this.newMessage,status:"sent", /* date:"12/12" */});
+            console.log(this.newMessage);
+            console.log(this.currentMessages);
+            this.newMessage="";
         }
     }
 })

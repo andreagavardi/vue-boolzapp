@@ -33,7 +33,7 @@ main {
 input {
   border-style: none;
   border-radius: 5px;
-  padding: 0.5rem;
+  padding: 0 1.5rem;
 }
 .sent,
 .received {
@@ -82,7 +82,7 @@ Left-bar
 .icons i,
 .text_bar i {
   margin: 2px;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: grey;
 }
 
@@ -133,8 +133,8 @@ Left-bar
   background-color: white;
   padding: 1rem;
   margin-bottom: 2px;
+  cursor: pointer;
 }
-
 .contact:hover {
   background-color: #fafafa;
 }
@@ -174,7 +174,8 @@ Site Main
   height: 100%;
 }
 
-.message {
+.message,
+.message_sent {
   display: flex;
   flex-direction: column;
   padding: 3rem 1.5rem;
@@ -182,9 +183,10 @@ Site Main
 .message .data {
   position: absolute;
   bottom: 5px;
-  right: 15%;
+  right: 10%;
   font-size: 0.8rem;
 }
+
 /* text section */
 .text_bar {
   display: flex;

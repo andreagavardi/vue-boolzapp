@@ -86,13 +86,14 @@
 
                         </div>
                     </div>
+                    
                 </div>
                 <!-- /Messages section -->
 
                 <!-- Text section -->
                 <div class="text_bar">
                     <i class="fas fa-smile fa-lg fa-fw"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" placeholder="Scrivi un messaggio" @keyup.enter="inviaMessaggio()" v-model="newMessage">
                   <i class="fas fa-microphone fa-lg fa-fw"></i>
                 </div>
                 <!--/Text section -->
