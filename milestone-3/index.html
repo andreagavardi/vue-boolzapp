@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+    <!-- fontawesom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- style.css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    
+
+    <div id="app">
+
+        <div class="main_container">
+            <!-- Left Sidebar -->
+            <aside>
+                <div class="aside_top">
+                    <!-- User section -->
+                    <div class="user_menu">
+                        <div class="user">
+                            <img src="./assets/img/avatar_io.jpg" alt="">
+                            <span class="user_name" >Nome Utente</span>
+                        </div>
+                        <div class="icons">
+                            <i class="fas fa-circle-notch fa-lg fa-fw"></i>
+                           <i class="fas fa-comment-alt fa-lg fa-fw"></i>
+                            <i class="fas fa-ellipsis-v fa-lg fa-fw"></i>
+    
+                        </div>
+                    </div>
+
+                    <!-- notification Off section -->
+                    <div class="silent">
+                        <i class="fas fa-bell-slash fa-lg fa-fw"></i>
+                        <div class="notifications">
+                            <span>Ricevi notifiche di nuovi messaggi</span>
+                            <br>
+                            <span>Attiva notifiche desktop</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contacts lists -->
+                <div class="contacts_bar">
+                    <div class="search_bar">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <i class="fas fa-search fa-lg fa-fw"></i>
+                    </div>
+                    <div class="contacts" v-for="(contact,index) in contacts">
+                        <div class="contact" @click="selezionaContatto(contact)">
+                            <img :src="url + contact.avatar +'.jpg'"  alt="">
+                            <span >{{contact.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- /Left Sidebar -->
+
+            <!-- Main Section -->
+            <main id="site_main">
+                <!--Current contact Section -->
+                <section class="current_contact">
+                    <div class="user">
+                        <img :src="currentImage"alt="">
+                        <span class="user_name">{{contattoCorrente.name}}</span>
+                    </div>
+                    <div class="icons">
+                       <i class="fas fa-search fa-lg fa-fw"></i>
+                      <i class="fas fa-paperclip fa-lg fa-fw"></i>
+                        <i class="fas fa-ellipsis-v fa-lg fa-fw"></i>
+                    
+                    </div>
+                </section>
+
+                <!-- Messages section -->
+                <div class="messages">
+                    <div class="message" v-for="message in currentMessages">
+                        <div :class="message.status">{{message.text}}
+                            <span class="detail data">{{message.date}}</span>
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- /Messages section -->
+
+                <!-- Text section -->
+                <div class="text_bar">
+                    <i class="fas fa-smile fa-lg fa-fw"></i>
+                    <input type="text" placeholder="Scrivi un messaggio" @keyup.enter="inviaMessaggio()" v-model="newMessage">
+                  <i class="fas fa-microphone fa-lg fa-fw"></i>
+                </div>
+                <!--/Text section -->
+            </main>
+            <!--/Messages Section -->
+            
+        </div>
+    </div>
+
+
+    <!-- Vue CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <!-- main.js -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+/**********
+Common
+***********/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #d6dbd7;
+}
+.main_container {
+  height: 90vh;
+  width: 90%;
+  margin: 25px auto;
+  display: flex;
+}
+
+aside {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+input {
+  border-style: none;
+  border-radius: 5px;
+  padding: 0 1.5rem;
+}
+.sent,
+.received {
+  font-size: 1.25rem;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  position: relative;
+}
+.sent {
+  background-color: #d4f4ba;
+  align-self: flex-end;
+  margin-right: 2rem;
+}
+.received {
+  background-color: white;
+  align-self: flex-start;
+  margin-left: 2rem;
+}
+
+/************
+Left-bar
+************/
+.user_menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eaeaea;
+  /*  min-height: 50%; */
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  height: 90px;
+}
+.user > img,
+.contact img {
+  width: 80px;
+  border-radius: 50%;
+}
+.user_name,
+.contact span {
+  font-size: 1.3rem;
+}
+
+.icons i,
+.text_bar i {
+  margin: 2px;
+  font-size: 1.35rem;
+  color: grey;
+}
+
+.silent {
+  background-color: #8edafc;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.15rem;
+}
+.silent i {
+  color: #8edafc;
+  font-size: 2.5rem;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px 0;
+}
+.silent span:last-child {
+  text-decoration: underline;
+  color: grey;
+  font-size: 1rem;
+}
+
+.contacts_bar {
+  background-color: #fafafa;
+  overflow-y: scroll;
+  flex-grow: 2;
+}
+.search_bar {
+  position: relative;
+}
+.search_bar i {
+  position: absolute;
+  left: 15px;
+  top: 40%;
+  color: grey;
+}
+.contacts_bar input {
+  padding: 10px;
+  width: calc(100% - 1rem);
+  text-align: center;
+  margin: 0.5rem;
+}
+
+.contact {
+  display: flex;
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 2px;
+  cursor: pointer;
+}
+.contact:hover {
+  background-color: #fafafa;
+}
+.contact span {
+  margin-left: 1rem;
+}
+
+/***********
+Site Main
+************/
+
+#site_main {
+  background-image: url("../img/mine.jpg");
+
+  background-size: contain;
+  background-position-y: bottom;
+  background-position-x: -50px;
+}
+
+.current_contact {
+  background-color: #eaeaea;
+  border-left: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 15px;
+  min-height: 90px;
+}
+.current_contact .user .user_name {
+  margin-left: 1.5rem;
+}
+
+/* messages section */
+.messages {
+  overflow-y: auto;
+  border-right: 1px solid grey;
+  height: 100%;
+  padding: 2.5rem 0;
+}
+
+.message,
+.message_sent {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1.5rem;
+}
+.message .data {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  font-size: 0.8rem;
+  color: #b6bfbb;
+}
+
+/* text section */
+.text_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 112px;
+  background-color: #eaeaea;
+}
+.text_bar input {
+  width: 85%;
+  line-height: 3.5rem;
+  font-size: 1.5rem;
+}
+.text_bar input::placeholder {
+  font-size: 1.25rem;
+  padding: 15px;
+}
