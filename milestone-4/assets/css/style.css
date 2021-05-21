@@ -114,6 +114,7 @@ Left-bar
   flex-grow: 2;
 }
 .search_bar {
+  background-color: #fafafa;
   position: relative;
 }
 .search_bar i {
@@ -122,7 +123,7 @@ Left-bar
   top: 40%;
   color: grey;
 }
-.contacts_bar input {
+.search_bar input {
   padding: 10px;
   width: calc(100% - 1rem);
   text-align: center;
