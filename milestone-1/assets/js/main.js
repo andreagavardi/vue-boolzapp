@@ -16,19 +16,40 @@ const app = new Vue({
 
     data:{
         url:"./assets/img/avatar",
-        contattoCorrente:{
+       contattoCorrente: {
 			name: 'Fabio',
 			avatar: '_2'},
-        currentImage:"./assets/img/avatar_2.jpg",
-        currentMessages:[],
-        newMessage:"",
-        messageSent:{
-                date: '10/01/2020 15:30:55',
-				text: "",
-				status: 'sent'
 
-        },
+        currentImage:"./assets/img/avatar_2.jpg",
+
+        currentMessages:[],
+
+        newMessage:"",
+       
+		currentDate: dayjs().format("DD/MM/YYYY HH:mm:ss"),
         contacts: [
+		{
+		name: 'Tony',
+		avatar: '_5',
+		visible: true,
+		messages: [
+			{
+				date: '10/01/2020 15:30:55',
+				text: 'Hai studiato Vue?',
+				status: 'sent'
+			},
+			{
+				date: '10/01/2020 15:50:00',
+				text: 'Ricordati di ripassare nel WeekEnd',
+				status: 'sent'
+			},
+			{
+				date: '10/01/2020 16:15:22',
+				text: 'Ma per chi mi hai preso?!',
+				status: 'received'
+			}
+		],
+	},	
 	{
 		name: 'Michele',
 		avatar: '_1',
@@ -113,28 +134,36 @@ const app = new Vue({
 			}
 		],
 	},
-]
-
+		],
+		
+		
     },
 
     methods:{
 		
 		selezionaContatto(contact){
 			this.contattoCorrente = contact;
-			console.log(this.contattoCorrente);
             this.currentImage = this.url + contact.avatar +".jpg";
             this.currentMessages=contact.messages;
         },
-		rispostaAuto(msg) {
+		rispostaAuto(msg,date) {
 			  setTimeout(function(){
-			  msg.push({text:"sei fantastico",status:"received", /* date:"12/12" */})
-
+			  msg.push({
+				  text:"Ti scriverò sempre lo stesso messaggio a prescindere",
+				  status:"received",
+				  date: date
+				})
+				console.log(msg);
 			  }, 1000)
 		},
         inviaMessaggio(){
-            this.currentMessages.push({text:this.newMessage,status:"sent", /* date:"12/12" */});
+            this.currentMessages.push({
+				text:this.newMessage,
+				status:"sent", 
+				date: this.currentDate
+			});
             this.newMessage="";
-			this.rispostaAuto(this.currentMessages);
+			this.rispostaAuto(this.currentMessages,this.currentDate);
 
         }
     },

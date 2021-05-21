@@ -82,7 +82,7 @@
                 <div class="messages">
                     <div class="message" v-for="message in currentMessages">
                         <div :class="message.status">{{message.text}}
-                            <span class="detail data">{{message.date}}</span>
+                            <div class="detail data">{{message.date}}</div>
 
                         </div>
                     </div>
@@ -103,6 +103,9 @@
         </div>
     </div>
 
+
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>dayjs().format()</script>
 
     <!-- Vue CDN -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
