@@ -7,7 +7,8 @@ Common
   padding: 0;
 }
 body {
-  background-color: #d6dbd7;
+  height: 100vh;
+  background: linear-gradient(to bottom, #399688 115px, #d8dbd5 0);
 }
 .main_container {
   height: 90vh;
@@ -72,12 +73,12 @@ Left-bar
 }
 .user > img,
 .contact img {
-  width: 80px;
+  width: 65px;
   border-radius: 50%;
 }
 .user_name,
 .contact span {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .icons i,
@@ -93,7 +94,8 @@ Left-bar
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 1.15rem;
+  font-size: 1rem;
+  height: 90px;
 }
 .silent i {
   color: #8edafc;
@@ -106,6 +108,10 @@ Left-bar
   text-decoration: underline;
   color: grey;
   font-size: 1rem;
+}
+
+.notifications {
+  margin-left: 20px;
 }
 
 .contacts_bar {
@@ -138,7 +144,7 @@ Left-bar
   cursor: pointer;
 }
 .contact:hover {
-  background-color: #fafafa;
+  background-color: #e9ebeb;
 }
 .contact span {
   margin-left: 1rem;
@@ -198,6 +204,7 @@ Site Main
   justify-content: space-around;
   height: 112px;
   background-color: #eaeaea;
+  padding: 10px 0;
 }
 .text_bar input {
   width: 85%;

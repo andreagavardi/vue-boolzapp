@@ -17,9 +17,7 @@ const app = new Vue({
     data:{
         url:"./assets/img/avatar",
 
-       contattoCorrente: {
-			name: 'Fabio',
-			avatar: '_2'},
+       contattoCorrente: 0,
 
         currentImage:"./assets/img/avatar_2.jpg",
 
@@ -144,10 +142,10 @@ const app = new Vue({
 
     methods:{
 		
-		selezionaContatto(contact){
-			this.contattoCorrente = contact;
-            this.currentImage = this.url + contact.avatar +".jpg";
-            this.currentMessages=contact.messages;
+		selezionaContatto(contact, index){
+			this.contattoCorrente = index;
+           
+           this.currentMessages=contact.messages;
         },
 		rispostaAuto(msg,date) {
 			  setTimeout(function(){
