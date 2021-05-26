@@ -25,7 +25,12 @@ const app = new Vue({
        
 		currentDate: dayjs().format("DD/MM/YYYY HH:mm:ss"),
 
+		hide:false,
+
 		ricerca:"",
+
+		counter:-1,
+
         contacts: [
 		{
 		name: 'Tony',
@@ -163,9 +168,27 @@ const app = new Vue({
             this.newMessage="";
 			this.rispostaAuto(messages,this.currentDate);
 
-        }
+        },
+		
+		
+		mostraSubMenu(index){
+			this.counter = index;
+		},
+		deleteMsg(message){
+			message.status = "deleted"
+		}
+		
+		
     },
 	
+	created(){
+		/* document.addEventListener("click",(event) => {
+			this.hide=true;
+		}); */
+		
+		
+		
+	}
 })
 
 /* struttura dati contatti */

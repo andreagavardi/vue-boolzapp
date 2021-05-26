@@ -7,13 +7,13 @@ Common
   padding: 0;
 }
 body {
-  height: 100vh;
+  height: 95vh;
   background: linear-gradient(to bottom, #399688 115px, #d8dbd5 0);
 }
 .main_container {
   height: 90vh;
   width: 90%;
-  margin: 25px auto;
+  margin: 30px auto;
   display: flex;
 }
 
@@ -120,6 +120,7 @@ Left-bar
 .contacts_bar {
   background-color: #fafafa;
   overflow-y: scroll;
+
   flex-grow: 2;
 }
 .search_bar {

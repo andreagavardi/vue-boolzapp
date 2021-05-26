@@ -210,7 +210,12 @@ Site Main
   height: 100%;
   padding: 2.5rem 0;
 }
-
+.message {
+  position: relative;
+}
+/* .hide {
+    visibility: hidden;
+  } */
 .message,
 .message_sent {
   display: flex;
@@ -223,6 +228,17 @@ Site Main
   font-size: 0.8rem;
   color: #b6bfbb;
   text-align: end;
+}
+.sub-menu {
+  bottom: -15px;
+  right: 0;
+  font-size: 1rem;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  background-color: gray;
+  border-radius: 5px;
+  padding: 2px;
 }
 
 /* text section */

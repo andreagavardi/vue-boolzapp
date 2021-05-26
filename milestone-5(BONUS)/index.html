@@ -94,9 +94,13 @@
 
                 <!-- Messages section -->
                 <div class="messages">
-                    <div class="message" v-for="message in contacts[contattoCorrente].messages" >
+                    <div class="message" v-for="(message,index) in contacts[contattoCorrente].messages" v-if="message.status!= 'deleted'" @click="mostraSubMenu(index)">
                         <div :class="message.status">{{message.text}}
-                            <div class="detail data">{{message.date}}</div>   
+                            <div class="sub-menu" v-if="counter == index">
+                                <div class="info">Info messaggio</div>
+                                <div class="delete_msg" @click="deleteMsg(message)">Cancella messaggio</div>
+                            </div>  
+                            <div class="detail data">{{message.date}}</div> 
                         </div>
                     </div>
                     
