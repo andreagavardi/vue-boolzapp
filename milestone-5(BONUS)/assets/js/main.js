@@ -18,9 +18,8 @@ const app = new Vue({
         url:"./assets/img/avatar",
 
        contattoCorrente: 0,
-
-        currentMessages:[],
-
+		contattoSelezionato:"",
+		contattoAttivo:"",
         newMessage:"",
        
 		currentDate: dayjs().format("DD/MM/YYYY HH:mm:ss"),
@@ -147,8 +146,8 @@ const app = new Vue({
 		
 		selezionaContatto(contact, index){
 			this.contattoCorrente = index;
+			
            
-           this.currentMessages=contact.messages;
         },
 		rispostaAuto(msg,date) {
 			  setTimeout(function(){
@@ -171,11 +170,23 @@ const app = new Vue({
         },
 		
 		
-		mostraSubMenu(index){
-			this.counter = index;
+		mostraSubMenu(index,contatto){
+			if(this.counter == index){
+				this.counter = -1;
+			}else{
+				this.contattoSelezionato=contatto.name
+				this.counter = index;
+
+			}
+
 		},
-		deleteMsg(message){
-			message.status = "deleted"
+		deleteMsg(message,counter){
+			let answer=confirm("vuoi cancellare il messaggio definitivamente?")
+			if(answer){
+				message.status = "deleted"
+			}else{
+				counter = null //faccio disapparire il sub-menu
+			}
 		}
 		
 		

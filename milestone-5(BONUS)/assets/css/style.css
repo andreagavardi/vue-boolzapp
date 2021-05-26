@@ -7,6 +7,7 @@ Common
   padding: 0;
 }
 body {
+  overflow-y: hidden;
   height: 100vh;
   background: linear-gradient(to bottom, #399688 115px, #d8dbd5 0);
 }
@@ -149,6 +150,9 @@ Left-bar
 .contact:hover {
   background-color: #e9ebeb;
 }
+.contact.selected {
+  background-color: #e9ebeb;
+}
 .contact span,
 .last_msg {
   margin-left: 1rem;
@@ -183,10 +187,7 @@ Site Main
 
 #site_main {
   background-image: url("../img/mine.jpg");
-
-  background-size: contain;
-  background-position-y: bottom;
-  background-position-x: -50px;
+  background-repeat: repeat;
 }
 
 .current_contact {
@@ -213,9 +214,6 @@ Site Main
 .message {
   position: relative;
 }
-/* .hide {
-    visibility: hidden;
-  } */
 .message,
 .message_sent {
   display: flex;
@@ -230,15 +228,30 @@ Site Main
   text-align: end;
 }
 .sub-menu {
-  bottom: -15px;
+  top: 35px;
   right: 0;
   font-size: 1rem;
   position: absolute;
   text-align: center;
   z-index: 1;
-  background-color: gray;
+  background-color: white;
   border-radius: 5px;
-  padding: 2px;
+  padding: 10px;
+  box-shadow: 1px 2px 5px 2px grey;
+  cursor: pointer;
+}
+.sub-menu i.fas.fa-chevron-down {
+  color: #0080007a;
+  position: absolute;
+  top: -30px;
+  right: 5px;
+}
+.sub-menu div {
+  border-radius: 5px;
+  padding: 10px 2px;
+}
+.sub-menu div:hover {
+  background-color: lightgray;
 }
 
 /* text section */
