@@ -63,7 +63,6 @@ Left-bar
   justify-content: space-between;
   align-items: center;
   background-color: #eaeaea;
-  /*  min-height: 50%; */
 }
 .user_menu .user_name {
   font-weight: bold;
@@ -92,6 +91,7 @@ Left-bar
   color: grey;
 }
 
+/* notification OFF section */
 .silent {
   background-color: #8edafc;
   padding: 1.5rem;
@@ -118,6 +118,7 @@ Left-bar
   margin-left: 20px;
 }
 
+/* section contacts list */
 .contacts_bar {
   background-color: #fafafa;
   overflow-y: scroll;
@@ -168,6 +169,7 @@ Left-bar
   display: flex;
   justify-content: space-between;
 }
+
 span.last_msgDate,
 .last_msg {
   font-size: 0.9rem;
@@ -227,6 +229,8 @@ Site Main
   color: #b6bfbb;
   text-align: end;
 }
+
+/* menu drop-down section */
 .sub-menu {
   top: 35px;
   right: 0;

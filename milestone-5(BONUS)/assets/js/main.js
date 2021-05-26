@@ -17,16 +17,15 @@ const app = new Vue({
     data:{
         url:"./assets/img/avatar",
 
-       contattoCorrente: 0,
-		contattoSelezionato:"",
-		contattoAttivo:"",
-        newMessage:"",
+       contattoCorrente: 0, //indice contatto corrente
+	   
+		contattoSelezionato:"", //nome del contatto in cui cancello i messaggi
+		
+        newMessage:"", // nuovo messaggio scritto nell'input-text
        
 		currentDate: dayjs().format("DD/MM/YYYY HH:mm:ss"),
 
-		hide:false,
-
-		ricerca:"",
+		ricerca:"", 
 
 		counter:-1,
 
@@ -144,11 +143,18 @@ const app = new Vue({
 
     methods:{
 		
-		selezionaContatto(contact, index){
+		selezionaContatto(index){
 			this.contattoCorrente = index;
 			
            
         },
+
+		/**
+		 * ## Risposta automatica
+		 * crea un messaggio di risposta automatica dopo l'invio di un nuovo messaggio
+		 * @param {array} msg -lista di messaggi in cui inserisco la risposta automatica
+		 * @param {object} date -data corrente
+		 */
 		rispostaAuto(msg,date) {
 			  setTimeout(function(){
 			  msg.push({
@@ -158,6 +164,12 @@ const app = new Vue({
 				})
 		    }, 1000)
 		},
+
+		/**
+		 * ## invio nuovo messaggio
+		 * inserisco un messaggio nell'input e lo inserisco nella chat
+		 * @param {array} messages -lista di messaggi in cui inserisco il mio messaggio
+		 */
         inviaMessaggio(messages){
             messages.push({
 				text:this.newMessage,
@@ -169,11 +181,17 @@ const app = new Vue({
 
         },
 		
-		
+		/**
+		 * ## mostra menu
+		 * 
+		 * mostra il menu a comparsa per eliminare il messaggio selezionato
+		 * @param {number} index -indice del messaggio cliccato
+		 * @param {object} contatto -contatto di cui sto cliccando il messaggio
+		 */
 		mostraSubMenu(index,contatto){
-			if(this.counter == index){
-				this.counter = -1;
-			}else{
+			if(this.counter == index){ //se è già stato cliccato una volta lo deseleziono e quindi disappare
+				this.counter = null;
+			}else{ 						//altrimenti appare
 				this.contattoSelezionato=contatto.name
 				this.counter = index;
 
@@ -192,14 +210,7 @@ const app = new Vue({
 		
     },
 	
-	created(){
-		/* document.addEventListener("click",(event) => {
-			this.hide=true;
-		}); */
-		
-		
-		
-	}
+	
 })
 
-/* struttura dati contatti */
+
